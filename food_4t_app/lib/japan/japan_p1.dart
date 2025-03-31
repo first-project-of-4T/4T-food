@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class JapanP1 extends StatefulWidget {
@@ -8,8 +9,138 @@ class JapanP1 extends StatefulWidget {
 }
 
 class _JapanP1State extends State<JapanP1> {
+late List<String> imageName;
+late int currentImage;
+late Timer timer;
+
+@override
+  void initState() {
+    super.initState();
+    imageName = [
+      'susi.jpg',
+      'timer1.jpg',
+      'timer2.jpg',
+      'timer3.jpg',
+      'timer4.jpg',
+    ];
+    currentImage = 0;
+
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      ChageImage();
+    },
+    );
+    
+  }//init
+
+
+ChageImage(){
+  currentImage++;
+  if(currentImage >= imageName.length){
+    currentImage = 0;
+  }
+  setState(() {  });
+}
+
+@override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Image.asset('images/japan.jpg',
+            height: 40,
+            width: 60,
+            ),
+            Spacer(),
+            Text('일본'),
+            Spacer(),
+          ],
+        ),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Text('일식 소개',
+                style: TextStyle(
+                fontSize: 30,
+                          ),
+                ),
+              ),
+              SizedBox(height: 15,),
+              Text('- 바다로 둘러싸인 섬',
+              style: TextStyle(fontSize: 20),
+              ),
+              Text('- 사계절이 뚜렷한 기후',
+              style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 15,),
+              Text('신선한 해산물이 식탁의 중심이 되며 정갈합니다. \n대표적인 음식은 스시,돈카츠가 있습니다.'),
+              Text('제철 재료를 살려 최대한 담백하게 즐깁니다. \n간장, 와사비 같은 기본 소스와 음식의 조화'),
+              SizedBox(height: 15,),
+              Center(
+                child: SizedBox(
+                  width: 280,
+                  height: 300,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black,
+                      width: 5,
+                      ),
+                    ),
+                    child: Image.asset('images/${imageName[currentImage]}',
+                    fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 15,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      previewButton();
+                    }, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                    ),
+                    child: Text('메인'),
+                    ),
+                  ElevatedButton(
+                    onPressed: () {
+                      nextviewButton();
+                    }, 
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                    ),
+                    child: Text('다음'),
+                    ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }//build
+previewButton(){
+ Navigator.popAndPushNamed(context, '/');
+}
+
+nextviewButton(){
+ Navigator.popAndPushNamed(context, '/j2');
+
+}
+
 }
