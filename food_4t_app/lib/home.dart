@@ -3,6 +3,7 @@ import 'package:food_4t_app/china/china_p1.dart';
 import 'package:food_4t_app/japan/japan_p1.dart';
 import 'package:food_4t_app/korea/korea_p1.dart';
 import 'package:food_4t_app/mexico/mexico_p1.dart';
+import 'package:food_4t_app/start.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,7 +18,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -38,6 +39,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       body: TabBarView(
         controller: controller,
         children: [
+          Start(),
           KoreaP1(),
           ChinaP1(),
           JapanP1(),
@@ -47,6 +49,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
       bottomNavigationBar: TabBar(
         controller: controller,
         tabs: [
+          Tab(
+            icon: Icon(
+              Icons.house,
+            ),
+            text: "Home",
+          ),
           Tab(
             icon: Icon(
               Icons.looks_one,
