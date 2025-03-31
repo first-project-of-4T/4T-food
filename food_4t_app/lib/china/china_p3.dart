@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
+import 'dart:async';
 
 class ChinaP3 extends StatefulWidget {
   const ChinaP3({super.key});
@@ -13,6 +14,10 @@ class _ChinaP3State extends State<ChinaP3> {
     // Property
   late List<String> imageName;
   late int currentImage; // [currentImage]
+  late Timer timer;  
+
+
+
 
   @override
   void initState() {
@@ -24,7 +29,32 @@ class _ChinaP3State extends State<ChinaP3> {
     ];
 
     currentImage = 0;
+
+
+  // Timer설치
+  timer = Timer.periodic(Duration(seconds: 3), (timer){ // 3초마다 실행
+    changeImage();
+  },);      
+
+
+  } //initState
+
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
   }
+
+    changeImage(){
+    currentImage++;
+    if(currentImage >= imageName.length){
+      currentImage = 0;
+    }
+    setState(() {});
+  }
+
+
 
 
 
@@ -51,16 +81,25 @@ class _ChinaP3State extends State<ChinaP3> {
         child: Center(
           child: Column(
             children: [
-              Text("탕수육"),
+              Text("탕수육",
+              style: TextStyle(
+                fontSize: 40,
+              ),),
               Image.asset(
-                'images/${imageName[currentImage]}'
+                'images/${imageName[currentImage]}',
+                fit: BoxFit.cover,
+                width: 400,
+                height: 300,                
               ),
+              Text(""),
               Text("- 돼지고기에 녹말 반죽을 묻혀서 기름에 튀긴 후 \n설탕과 식초, 채소, 녹말물을 주재료로 만든\n 새콤달콤한 소스와 함께 먹는 중화요리다."),
+              Text(""),
               Text("- 고기를 정육면체로 썰어 튀김의 크기가 작고\n 동글동글하며 마른 녹말을 입혀 튀기는 것이 특징."),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    onPressed: () => Navigator.popAndPushNamed(context, '/c1'),
+                    onPressed: () => Navigator.popAndPushNamed(context, '/c2'),
                     child: Text('이전')
                   ),
                   ElevatedButton(
