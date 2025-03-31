@@ -13,6 +13,7 @@ import 'package:food_4t_app/mexico/mexico_p3.dart';
 import 'home.dart';
 import 'korea/korea_p2.dart';
 import 'korea/korea_p3.dart';
+import 'start.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) => Home(),
+        '/start' : (context) => Start(),
         '/k1' : (context) => KoreaP1(),
         '/k2' : (context) => KoreaP2(),
         '/k3' : (context) => KoreaP3(),
