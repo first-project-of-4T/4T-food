@@ -109,9 +109,7 @@ ChageImage(){
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
-                    onPressed: () {
-                      previewButton();
-                    }, 
+                    onPressed: () => Navigator.popAndPushNamed(context, '/'),                  
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                     ),
@@ -134,10 +132,6 @@ ChageImage(){
       ),
     );
   }//build
-previewButton(){
- Navigator.popAndPushNamed(context, '/');
-}
-
 nextviewButton(){
  Navigator.popAndPushNamed(context, '/j2');
 

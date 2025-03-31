@@ -84,9 +84,7 @@ late int currentImage;
                     child: Text('이전'),
                     ),
                   ElevatedButton(
-                    onPressed: () {
-                      nextviewButton();
-                    }, 
+                    onPressed: () => Navigator.popAndPushNamed(context, '/'),   
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                     ),
@@ -102,11 +100,6 @@ late int currentImage;
   }//build
 previewButton(){
  Navigator.popAndPushNamed(context, '/j2');
-}
-
-nextviewButton(){
- Navigator.popAndPushNamed(context, '/');
-
 }
 
 _onHorizontalSwipe(SwipeDirection direction){
