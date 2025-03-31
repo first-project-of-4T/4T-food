@@ -51,10 +51,8 @@ class _KoreaP2State extends State<KoreaP2> {
         children: [
           Image.asset('images/korea.png', height: 40, width: 60),
           SizedBox(width: 6),
-          Padding(
-            padding: const EdgeInsets.all(300.0),
+            Text("한식",style: TextStyle(color: const Color.fromARGB(255, 240, 18, 2)),
             ),
-            Text("한식",style: TextStyle(color: const Color.fromARGB(255, 240, 18, 2)),),
           ],
         ),
       ),
@@ -80,21 +78,31 @@ class _KoreaP2State extends State<KoreaP2> {
             children: [
               Icon(Icons.circle, size: 6),
               SizedBox(width: 6),
-              Expanded(child: Text("김치찌개는 잘 익은 김치와 돼지고기를 넣고 끓인 한국대표 찌개.")),
+              Expanded(
+                child: Text("김치찌개는 잘 익은 김치와 돼지고기를 넣고 끓인 한국대표 찌개.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ),
             ],
           ),
           Row(
             children: [
               Icon(Icons.circle, size: 6),
               SizedBox(width: 6),
-              Expanded(child: Text("국물이 얼큰하고 진해서 밥이랑 찰떡궁합이야.")),
+              Expanded(child: Text("국물이 얼큰하고 진해서 밥이랑 찰떡궁합이야.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ),
             ],
           ),
           Row(
             children: [
               Icon(Icons.circle, size: 6),
               SizedBox(width: 6),
-              Expanded(child: Text("한입 먹으면 기분 좋아지는 존맛탱.")),
+              Expanded(child: Text("한입 먹으면 기분 좋아지는 맛입니다.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              ),
             ],
           ),
           SizedBox(height: 20),
@@ -103,11 +111,14 @@ class _KoreaP2State extends State<KoreaP2> {
             children: [
               ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(context, '/k1'),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
                 child: Text('이전'),
               ),
               SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(context, '/k3'),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                
                 child: Text('다음'),
               ),
             ],

@@ -55,9 +55,7 @@ class _KoreaP3State extends State<KoreaP3> {
         children: [
           Image.asset('images/korea.png', height: 40, width: 60),
           SizedBox(width: 6),
-          Padding(
-            padding: const EdgeInsets.all(300.0)
-            ),Text("한식",style: TextStyle(color: const Color.fromARGB(255, 240, 18, 2)),),
+          Text("한식",style: TextStyle(color: const Color.fromARGB(255, 240, 18, 2)),),
           ],
         ),
       ),
@@ -83,29 +81,43 @@ class _KoreaP3State extends State<KoreaP3> {
       children: [
         Icon(Icons.circle, size: 6),
         SizedBox(width: 6),
-        Expanded(child: Text("삼계탕은 영계(어린 닭) 안에 인삼, 찹쌀, 대추 등을 넣고 푹 끓인 보양식이야.")),
+        Expanded(child: Text(
+          "삼계탕은 영계(어린 닭) 안에 인삼, 찹쌀, 대추 등을 넣고 푹 끓인 보양식이야.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+          ),
       ],
     ),
     Row(
       children: [
         Icon(Icons.circle, size: 6),
         SizedBox(width: 6),
-        Expanded(child: Text("여름철 더위에 기력을 보충하기 위해 초복, 중복, 말복에 자주 먹어.")),
+        Expanded(child: Text("여름철 더위에 기력을 보충하기 위해 초복, 중복, 말복에 자주 먹어.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+        ),
       ],
     ),
     Row(
       children: [
         Icon(Icons.circle, size: 6),
         SizedBox(width: 6),
-        Expanded(child: Text("한입 먹으면 기분 좋아지는 존맛탱.")),
+        Expanded(child: Text("한입 먹으면 기분 좋아지는맛.",
+                style: TextStyle(fontWeight: FontWeight.bold),
+                )
+        ),
       ],
     ),
         Row(mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/k2' ),
-                 child: Text('이전')),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                 child: Text('이전',style: TextStyle(fontWeight: FontWeight.normal),)
+                 ),
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/' ),
-          child: Text('다음')),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+          child: Text('다음',style: TextStyle(fontWeight: FontWeight.normal))
+          ),
           ],
         ),
 
