@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
+import 'dart:async';
 
 class ChinaP2 extends StatefulWidget {
   const ChinaP2({super.key});
@@ -13,6 +14,7 @@ class _ChinaP2State extends State<ChinaP2> {
     // Property
   late List<String> imageName;
   late int currentImage; // [currentImage]
+  late Timer timer;  
 
   @override
   void initState() {
@@ -23,14 +25,33 @@ class _ChinaP2State extends State<ChinaP2> {
     ];
 
     currentImage = 0;
+
+  // Timer설치
+  timer = Timer.periodic(Duration(seconds: 3), (timer){ // 3초마다 실행
+    changeImage();
+  },);        
+  } // initState
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
   }
 
-
+    changeImage(){
+    currentImage++;
+    if(currentImage >= imageName.length){
+      currentImage = 0;
+    }
+    setState(() {});
+  }
 
 
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -52,13 +73,24 @@ class _ChinaP2State extends State<ChinaP2> {
         child: Center(
           child: Column(
             children: [
-              Text("짜장면"),
+              Text("짜장면",
+              style: TextStyle(
+                fontSize: 40,
+              ),),
+              
               Image.asset(
-                'images/${imageName[currentImage]}'
+                'images/${imageName[currentImage]}',
+                fit: BoxFit.cover,
+                width: 400,
+                height: 300,
               ),
+              Text(""),
               Text("- 볶은 춘장과 야채, 고기 등의 재료를다시 식용유에\n 볶아 면에 비벼 먹는 한국식 중화 요리이다."),
+              Text(""),
               Text("- 본래 중국 요리 중 하나인 작장면이 한국으로 유입된 뒤\n 변형, 현지화되면서 파생한 요리로, 현지화 과정에서\n 맛이나 형태가 원본과는 많이 달라진 음식이다."),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () => Navigator.popAndPushNamed(context, '/c1'),
