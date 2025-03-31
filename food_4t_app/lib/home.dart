@@ -68,8 +68,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
             text: "중국",
           ),
           Tab(
-            icon: Icon(
-              Icons.looks_3,
+            icon: Image.asset(
+              'images/japan.jpg'
             ),
             text: "일본",
           ),
