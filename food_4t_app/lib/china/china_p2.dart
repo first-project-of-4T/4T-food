@@ -22,6 +22,7 @@ class _ChinaP2State extends State<ChinaP2> {
     imageName = [
       'chinanoodle1.jpg',
       'chinanoodle2.jpg',
+            
     ];
 
     currentImage = 0;
@@ -73,9 +74,14 @@ class _ChinaP2State extends State<ChinaP2> {
         child: Center(
           child: Column(
             children: [
+              Text("중식하면 가장 먼저 떠오르는",
+              style: TextStyle(
+                fontSize: 15,
+              ),),
               Text("짜장면",
               style: TextStyle(
                 fontSize: 40,
+                fontWeight: FontWeight.bold
               ),),
               
               Image.asset(
@@ -84,11 +90,20 @@ class _ChinaP2State extends State<ChinaP2> {
                 width: 400,
                 height: 300,
               ),
+              Text("그림을 아래위로 넘겨보세요",
+                style: TextStyle(
+                  fontSize: 10
+                ),),
               Text(""),
-              Text("- 볶은 춘장과 야채, 고기 등의 재료를다시 식용유에\n 볶아 면에 비벼 먹는 한국식 중화 요리이다."),
+              Text("- 볶은 춘장과 야채, 고기 등의 재료를다시 식용유에\n\n  볶아 면에 비벼 먹는 한국식 중화 요리이다.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),),
               Text(""),
-              Text("- 본래 중국 요리 중 하나인 작장면이 한국으로 유입된 뒤\n 변형, 현지화되면서 파생한 요리로, 현지화 과정에서\n 맛이나 형태가 원본과는 많이 달라진 음식이다."),
-
+              Text("- 본래 중국 요리 중 하나인 작장면이 한국으로 유입된 뒤\n\n  변형, 현지화되면서 파생한 요리로, 현지화 과정에서\n\n    맛이나 형태가 원본과는 많이 달라진 음식이다.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

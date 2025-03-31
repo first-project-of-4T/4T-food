@@ -81,9 +81,14 @@ class _ChinaP3State extends State<ChinaP3> {
         child: Center(
           child: Column(
             children: [
+              Text("부먹? VS 찍먹?",
+              style: TextStyle(
+                fontSize: 15,
+              ),),              
               Text("탕수육",
               style: TextStyle(
                 fontSize: 40,
+                fontWeight: FontWeight.bold
               ),),
               Image.asset(
                 'images/${imageName[currentImage]}',
@@ -91,10 +96,20 @@ class _ChinaP3State extends State<ChinaP3> {
                 width: 400,
                 height: 300,                
               ),
+              Text("그림을 아래위로 넘겨보세요",
+                style: TextStyle(
+                  fontSize: 10
+                ),),
               Text(""),
-              Text("- 돼지고기에 녹말 반죽을 묻혀서 기름에 튀긴 후 \n설탕과 식초, 채소, 녹말물을 주재료로 만든\n 새콤달콤한 소스와 함께 먹는 중화요리다."),
+              Text("- 돼지고기에 녹말 반죽을 묻혀서 기름에 튀긴 후 \n\n  설탕과 식초, 채소, 녹말물을 주재료로 만든\n\n  새콤달콤한 소스와 함께 먹는 중화요리다.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),),              
               Text(""),
-              Text("- 고기를 정육면체로 썰어 튀김의 크기가 작고\n 동글동글하며 마른 녹말을 입혀 튀기는 것이 특징."),
+              Text("- 고기를 정육면체로 썰어 튀김의 크기가 작고\n \n동글동글하며 마른 녹말을 입혀 튀기는 것이 특징.",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
