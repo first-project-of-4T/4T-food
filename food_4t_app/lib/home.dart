@@ -30,12 +30,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('data'),
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Colors.white,
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: Text('data'),
+      //   backgroundColor: Colors.blueAccent,
+      //   foregroundColor: Colors.white,
+      //   centerTitle: true,
+      // ),
       body: TabBarView(
         controller: controller,
         children: [
@@ -62,8 +62,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
             text: "한국",
           ),
           Tab(
-            icon: Image.asset(
-              'images/chinaflag.png',
+            icon: Icon(
+              Icons.looks_two,
             ),
             text: "중국",
           ),
@@ -74,9 +74,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
             text: "일본",
           ),
           Tab(
-            icon: Icon(
-              Icons.looks_4,
-            ),
+            icon: Image.asset('images/mexico.png'),
             text: "멕시코",
           ),
         ],
