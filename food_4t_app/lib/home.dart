@@ -46,38 +46,41 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
           MexicoP1(),
         ],
       ),
-      bottomNavigationBar: TabBar(
-        controller: controller,
-        tabs: [
-          Tab(
-            icon: Icon(
-              Icons.house,
+      bottomNavigationBar: Container(
+        color: Colors.amberAccent,
+        child: TabBar(
+          controller: controller,
+          tabs: [
+            Tab(
+              icon: Icon(
+                Icons.house,
+              ),
+              text: "Home",
             ),
-            text: "Home",
-          ),
-          Tab(
-            icon: Icon(
-              Icons.looks_one,
+            Tab(
+              icon: Icon(
+                Icons.looks_one,
+              ),
+              text: "한국",
             ),
-            text: "한국",
-          ),
-          Tab(
-            icon: Image.asset(
-              'images/chinaflag.png',
+            Tab(
+              icon: Image.asset(
+                'images/chinaflag.png',
+              ),
+              text: "중국",
             ),
-            text: "중국",
-          ),
-          Tab(
-            icon: Icon(
-              Icons.looks_3,
+            Tab(
+              icon: Icon(
+                Icons.looks_3,
+              ),
+              text: "일본",
             ),
-            text: "일본",
-          ),
-          Tab(
-            icon: Image.asset('images/mexico.png'),
-            text: "멕시코",
-          ),
-        ],
+            Tab(
+              icon: Image.asset('images/mexico.png'),
+              text: "멕시코",
+            ),
+          ],
+        ),
       ),
     );
   }
