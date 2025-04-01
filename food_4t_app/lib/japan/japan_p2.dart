@@ -73,9 +73,12 @@ late Timer timer;
               child: SimpleGestureDetector(
                 onHorizontalSwipe: (direction) => _onHorizontalSwipe(direction),
                 onVerticalSwipe: (direction) => _onVerticalSwipe(direction),
-                child: Image.asset('images/${imageName[currentImage]}',
-                width: 300,
-                height: 300,
+                child: CircleAvatar(
+                  radius: 150,
+                  backgroundImage: AssetImage('images/${imageName[currentImage]}',
+                  // width: 300,
+                  // height: 300,
+                  ),
                 ),
               ),
             ),
@@ -91,14 +94,15 @@ late Timer timer;
              Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
                       onPressed: () {
                         previewButton();
                       }, 
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white                                              
                       ),
                       child: Text('이전'),
                       ),
@@ -107,7 +111,8 @@ late Timer timer;
                         nextviewButton();
                       }, 
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white                                              
                       ),
                       child: Text('다음'),
                       ),

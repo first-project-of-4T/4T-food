@@ -29,7 +29,7 @@ body: Center(
     children: [
       Text(
         "한국의 음식",
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
       ),
       SizedBox(height: 16),
       Row(mainAxisAlignment: MainAxisAlignment.center,
@@ -72,10 +72,10 @@ body: Center(
           style: TextStyle(fontWeight: FontWeight.bold),),
         ],
       ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/' ),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                  child: Text('메인')),
           
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/k2' ),

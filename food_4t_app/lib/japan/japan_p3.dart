@@ -41,60 +41,65 @@ late int currentImage;
         ),
         backgroundColor: Colors.red,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Text('돈카츠',
-            style: TextStyle(
-              fontSize: 30,
-            ),
-            ),
-          ),
-          Center(
-            child: SimpleGestureDetector(
-              onHorizontalSwipe: (direction) => _onHorizontalSwipe(direction),
-              onVerticalSwipe: (direction) => _onVerticalSwipe(direction),
-              child: Image.asset('images/${imageName[currentImage]}',
-              width: 300,
-              height: 300,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Text('돈카츠',
+              style: TextStyle(
+                fontSize: 30,
+              ),
               ),
             ),
-          ),
-          Center(child: Text('독일의 커틀릿이 일본식 변형 \n겉은 바삭 속은 촉촉!.',
-          style: TextStyle(fontSize: 20),)),
-          SizedBox(height: 15,),
-          Text('-> 1900년대 도쿄에서 처음 만들어짐'),
-          SizedBox(height: 15,),
-          Text('-> 돼지고기 및 생선을 빵가루에 입혀 바삭하게 튀김'),
-          SizedBox(height: 15,),
-          Text('-> 양배추와 소스, 미소국과 함께 곁들이면서 식사'),
-           Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      previewButton();
-                    }, 
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                    ),
-                    child: Text('이전'),
-                    ),
-                  ElevatedButton(
-                    onPressed: () => Navigator.popAndPushNamed(context, '/'),   
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                    ),
-                    child: Text('메인'),
-                    ),
-                ],
+            Center(
+              child: SimpleGestureDetector(
+                onHorizontalSwipe: (direction) => _onHorizontalSwipe(direction),
+                onVerticalSwipe: (direction) => _onVerticalSwipe(direction),
+                child: Image.asset('images/${imageName[currentImage]}',
+                width: 300,
+                height: 300,
+                ),
               ),
-            )
-
-        ],
+            ),
+            Center(child: Text('독일의 커틀릿이 일본식 변형 \n겉은 바삭 속은 촉촉!.',
+            style: TextStyle(fontSize: 20),)),
+            SizedBox(height: 15,),
+            Text('-> 1900년대 도쿄에서 처음 만들어짐'),
+            SizedBox(height: 15,),
+            Text('-> 돼지고기 및 생선을 빵가루에 입혀 바삭하게 튀김'),
+            SizedBox(height: 15,),
+            Text('-> 양배추와 소스, 미소국과 함께 곁들이면서 식사'),
+             Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        previewButton();
+                      }, 
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        foregroundColor: Colors.white                                            
+                      ),
+                      child: Text('이전'),
+                      ),
+                    ElevatedButton(
+                      onPressed: () => Navigator.popAndPushNamed(context, '/'),   
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                        foregroundColor: Colors.white                                            
+                      ),
+                      child: Text('메인'),
+                      ),
+                  ],
+                ),
+              )
+        
+          ],
+        ),
       ),
     );
   }//build

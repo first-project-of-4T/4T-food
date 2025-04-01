@@ -29,7 +29,6 @@ late Timer timer;
       ChageImage();
     },
     );
-    
   }//init
 
 
@@ -74,16 +73,26 @@ ChageImage(){
               Center(
                 child: Text('일식 소개',
                 style: TextStyle(
-                fontSize: 30,
+                fontSize: 20, color: Colors.red, fontWeight: FontWeight.bold
                           ),
                 ),
               ),
               SizedBox(height: 15,),
-              Text('- 바다로 둘러싸인 섬',
-              style: TextStyle(fontSize: 20),
+              Row(
+                children: [
+                  Icon(Icons.house),
+                  Text(' 바다로 둘러싸인 섬',
+                  style: TextStyle(fontSize: 20),
+                  ),
+                ],
               ),
-              Text('- 사계절이 뚜렷한 기후',
-              style: TextStyle(fontSize: 20),
+              Row(
+                children: [
+                  Icon(Icons.house),
+                  Text(' 사계절이 뚜렷한 기후',
+                  style: TextStyle(fontSize: 20),
+                  ),
+                ],
               ),
               SizedBox(height: 15,),
               Text('신선한 해산물이 식탁의 중심이 되며 정갈합니다. \n대표적인 음식은 스시,돈카츠가 있습니다.'),
@@ -91,12 +100,12 @@ ChageImage(){
               SizedBox(height: 15,),
               Center(
                 child: SizedBox(
-                  width: 280,
-                  height: 300,
+                  width: 300,
+                  height: 260,
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black,
-                      width: 5,
+                      border: Border.all(color: Colors.redAccent,
+                      width: 7,
                       ),
                     ),
                     child: Image.asset('images/${imageName[currentImage]}',
@@ -107,12 +116,13 @@ ChageImage(){
               ),
               SizedBox(height: 15,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () => Navigator.popAndPushNamed(context, '/'),                  
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white
                     ),
                     child: Text('메인'),
                     ),
@@ -122,6 +132,7 @@ ChageImage(){
                     }, 
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
+                      foregroundColor: Colors.white
                     ),
                     child: Text('다음'),
                     ),

@@ -108,10 +108,10 @@ class _KoreaP3State extends State<KoreaP3> {
         ),
       ],
     ),
-        Row(mainAxisAlignment: MainAxisAlignment.center,
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/k2' ),
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                  child: Text('이전',style: TextStyle(fontWeight: FontWeight.normal),)
                  ),
             ElevatedButton(onPressed: () => Navigator.popAndPushNamed(context,'/' ),
