@@ -57,10 +57,13 @@ class _ChinaP2State extends State<ChinaP2> {
       appBar: AppBar(
         title: Row(
           children: [
-            Image.asset(
-              'images/chinaflag.png',
-              width: 80,
-              height: 40,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0,0,100,0),
+              child: Image.asset(
+                'images/chinaflag.png',
+                width: 60,
+                height: 40,
+              ),
             ),
             Text('중식'),
           ],
@@ -90,7 +93,7 @@ class _ChinaP2State extends State<ChinaP2> {
                 width: 400,
                 height: 300,
               ),
-              Text("그림을 아래위로 넘겨보세요",
+              Text("그림을 스와이프 해보세요",
                 style: TextStyle(
                   fontSize: 10
                 ),),
@@ -109,10 +112,16 @@ class _ChinaP2State extends State<ChinaP2> {
                 children: [
                   ElevatedButton(
                     onPressed: () => Navigator.popAndPushNamed(context, '/c1'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.amber
+                      ),                    
                     child: Text('이전')
                   ),
                   ElevatedButton(
                     onPressed: () => Navigator.popAndPushNamed(context, '/c3'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.amber
+                      ),                    
                     child: Text('다음')
                   )
                 ],
