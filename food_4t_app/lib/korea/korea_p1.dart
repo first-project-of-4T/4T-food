@@ -29,7 +29,7 @@ body: Center(
     children: [
       Text(
         "한국의 음식",
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
       ),
       SizedBox(height: 16),
       Row(mainAxisAlignment: MainAxisAlignment.center,

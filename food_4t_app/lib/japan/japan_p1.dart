@@ -73,7 +73,7 @@ ChageImage(){
               Center(
                 child: Text('일식 소개',
                 style: TextStyle(
-                fontSize: 25,
+                fontSize: 20, color: Colors.red, fontWeight: FontWeight.bold
                           ),
                 ),
               ),
