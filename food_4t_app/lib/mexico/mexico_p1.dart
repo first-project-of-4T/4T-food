@@ -88,10 +88,7 @@ class _MexicoP1State extends State<MexicoP1> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                        Navigator.popAndPushNamed(context, '/');
-                      },
+                      onPressed: () => Navigator.popAndPushNamed(context, '/'),
                       child: Text('메인'),
                     ),
                     ElevatedButton(

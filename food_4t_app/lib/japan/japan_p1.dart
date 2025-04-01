@@ -33,7 +33,7 @@ late Timer timer;
 
 
 ChageImage(){
-  if(!mounted) return;
+  if (!mounted) return;
   currentImage++;
   if(currentImage >= imageName.length){
     currentImage = 0;
