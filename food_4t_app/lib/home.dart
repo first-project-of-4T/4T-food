@@ -50,6 +50,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin{
         color: Colors.amberAccent,
         child: TabBar(
           controller: controller,
+          indicatorColor: Colors.blue,
+          indicatorWeight: 5,
           tabs: [
             Tab(
               icon: Icon(
