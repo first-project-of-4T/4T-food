@@ -107,11 +107,11 @@ class _KoreaP2State extends State<KoreaP2> {
           ),
           SizedBox(height: 20),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
                 onPressed: () => Navigator.popAndPushNamed(context, '/k1'),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 child: Text('이전'),
               ),
               SizedBox(width: 10),
