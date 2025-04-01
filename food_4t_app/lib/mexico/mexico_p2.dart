@@ -87,10 +87,18 @@ class _MexicoP2State extends State<MexicoP2> {
                     children: [
                       ElevatedButton(
                         onPressed: () => Navigator.popAndPushNamed(context, '/m1'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        foregroundColor: Colors.white,
+                      ),
                         child: Text('이전'),
                       ),
                       ElevatedButton(
                         onPressed: () => Navigator.popAndPushNamed(context, '/m3'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                        foregroundColor: Colors.white,
+                      ),
                         child: Text('다음'),
                       ),
                     ],
